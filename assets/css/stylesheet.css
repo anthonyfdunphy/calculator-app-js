@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -8,4 +9,39 @@ body{
     height: 100vh;
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    width: 35%;
+    height: 75%;
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
+    
+}
+
+.calculatorDisplay{
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    width: 100%;
+    height: 25%;
+    background-color: black;
+    color: white;
+    font-size: 15vh;
+}
+
+.calculatorKeyboard{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+
 }
