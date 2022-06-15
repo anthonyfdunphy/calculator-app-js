@@ -7,28 +7,28 @@ keys.addEventListener('click', event => {
 
     const key = event.target
     const keyValue = key.textContent
-
     const displayValue = display.textContent
+    const { type } = key.dataset
+    const { previousKeyType } = calculator.dataset
 
     /* code for number keys*/
-    if(key.dataset.type == 'num'){
+    if(type == 'num'){
         if(displayValue == '0'){
+            display.textContent = keyValue
+        } else if(previousKeyType == 'op'){
             display.textContent = keyValue
         } else{
             display.textContent = displayValue + keyValue 
         }
+
+        
     }
 
     /* code for operator keys*/
-    if(key.dataset.type == 'op'){
-        calculator.dataset.previousKeyType = 'op'
+    if(type == 'op'){
+        
     }
 
-
-    
-
-   
-
-    
+    calculator.dataset.previousKeyType = type  
     
 })
