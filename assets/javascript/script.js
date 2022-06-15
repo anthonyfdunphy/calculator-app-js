@@ -1,4 +1,4 @@
-const calculator = document.querySelector('calculator')
+const calculator = document.querySelector('.calculator')
 const keys = calculator.querySelector('.calculatorKeyboard')
 const display = calculator.querySelector('.calculatorDisplay')
 
@@ -11,7 +11,7 @@ keys.addEventListener('click', event => {
     const displayValue = display.textContent
 
     /* code for number keys*/
-    if(key.classList.contains('num')){
+    if(key.dataset.type == 'num'){
         if(displayValue == '0'){
             display.textContent = keyValue
         } else{
@@ -20,9 +20,8 @@ keys.addEventListener('click', event => {
     }
 
     /* code for operator keys*/
-    if(key.classList.contains('op')){
-        console.log(key)
-        
+    if(key.dataset.type == 'op'){
+        calculator.dataset.previousKeyType = 'op'
     }
 
 
